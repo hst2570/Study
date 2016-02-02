@@ -21,7 +21,7 @@ public class solution {
 	    return reverse;
 	}
 
-	public long result(){
+	public int result(){
 		
 		int first = 999;
 		int second = 999;
@@ -32,22 +32,35 @@ public class solution {
 		
 		int multi = 0;
 		
+		int result = 0;
+		
 		for(int i = first; i > 99 ; i--){
 			for(int j = second; j > 99 ; j--){
-				multi = first * second;
-				temp =  Integer.toString(multi);
-				left = temp.substring(0, 3);
-				right = temp.substring(4, 3);
-				right = reverse(right);
+				multi = i * j;
+				if(multi < 100000){
+					break;
+				}else{
+					temp =  Integer.toString(multi);
+					left = temp.substring(0, 3);
+					right = temp.substring(3);
+					right = reverse(right);
+					
+					int tmp1 = Integer.parseInt(left);
+					int tmp2 = Integer.parseInt(right);
+					
+					if(tmp1 == tmp2 && result < multi){
+						result = multi;
+					}
+				}
 			}
 		}
 		
-		
+		return result;
 		
 	}
 	
 	public static void main(String[] arg){
 		solution solution = new solution();
-//		System.out.println(solution.result());
+		System.out.println(solution.result());
 	}
 }
