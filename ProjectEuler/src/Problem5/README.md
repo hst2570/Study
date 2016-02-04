@@ -7,9 +7,21 @@
 ### 풀이
 
 - 반복문을 사용하여 숫자를 하나씩 늘리며 1~20까지 나눈다.
-
+- while문과 판별밧을 사용해 result의 값이 1~20까지 모두 나눠진다면 정지. 
 ```java
+	boolean 판별값 = false;
+	
+	while(판별값 == false){
+		result++;
+		for(int i = 기준값; i > 0; i--){
+			if(result%i == 0 && i==1){
+				판별값 = true;
+			}else if(result%i !=0){
+				break;
+			}
+		}
+	}
 
 ```
 
-### 정답 : 
+### 정답 : 232792560
