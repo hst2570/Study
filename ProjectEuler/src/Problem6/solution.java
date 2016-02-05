@@ -13,9 +13,22 @@ public class solution {
 	public long result(){
 		long 제곱의합 = 0;
 		long 합의제곱 = 0;
+		long temp=0;
 		long 차 = 0;
 		
-		//제곱의 합과 합의 제곱을 뺀다.
+		//제곱의 합
+		for(int i = 1; i <= 기준값; i++){
+			제곱의합 = i*i + 제곱의합;
+		}
+		
+		//합의 제곱
+		for(int i = 1; i <= 기준값; i++){
+			temp = temp + i;
+		}
+		
+		합의제곱 = temp * temp;
+		
+		차 = 합의제곱 - 제곱의합;
 		
 		return 차;
 	}
