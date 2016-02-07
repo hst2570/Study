@@ -30,9 +30,38 @@
 
 ### 풀이
 
-
+- 모든 값을 배열에 넣는다.
+- 반복문을 사용하여 배열을 5개씩 곱한다.
+- 최대값을 찾는다.
 ```java
+public int[] division(String 기준값){
+	int[] div = new int[기준값.length()];
+	
+	for(int i = 0; i < 기준값.length(); i++){
+		div[i] = Integer.parseInt(기준값.substring(i, i+1));
+	}
+	
+	
+	return div;
+}
 
+public int result(){
+	
+	int[] div = new int[기준값.length()];
+	div = division(기준값);
+	int temp = 1;
+	
+	int maximum = 0;
+	
+	for(int i = 0; i < div.length-4; i++){
+		temp = div[i]*div[i+1]*div[i+2]*div[i+3]*div[i+4];
+		if(temp > maximum){
+			maximum = temp;
+		}
+	}
+	
+	return maximum;
+}
 ```
 
-### 정답 : 
+### 정답 : 40824
